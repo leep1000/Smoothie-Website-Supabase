@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import supabase from "../config/superbaseClient";
 
 const Create = () => {
+  // this hook returns another function
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
   const [rating, setRating] = useState("");
@@ -14,7 +19,22 @@ const Create = () => {
       setFormError("Please fill in all the fields correctly");
       return;
     }
-    console.log(title, rating, method);
+
+    const { data, error } = await supabase
+      .from("smoothies")
+      .insert([{ title, method, rating }])
+      .select();
+
+    if (error) {
+      console.log(error);
+      setFormError("Please fill in all the fields correctly");
+    }
+
+    if (data) {
+      console.log(data);
+      setFormError(null);
+      navigate("/");
+    }
   };
 
   return (
