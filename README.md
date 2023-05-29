@@ -32,4 +32,4 @@ You may also see any lint errors in the console.
 
 ## Acknowledgments
 
-- Big thank you to [NetNinja](https://www.youtube.com/watch?v=ydz7Dj5QHKY&list=PL for a brilliant series explaining how Supabase works. 
+- Big thank you to [NetNinja](https://www.youtube.com/watch?v=ydz7Dj5QHKY&list=PL) for a brilliant series explaining how Supabase works. 
