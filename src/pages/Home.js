@@ -45,7 +45,7 @@ const Home = () => {
             <p>Order by:</p>
             <button
               onClick={() => {
-                setOrderBy("title");
+                setOrderBy("created_at");
                 setAscending(false);
               }}
             >
