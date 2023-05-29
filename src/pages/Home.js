@@ -6,6 +6,13 @@ import SmoothieCard from "../components/SmoothieCard";
 const Home = () => {
   const [fetchError, setFetchError] = useState(null);
   const [smoothies, setSmoothies] = useState(null);
+  const [orderBy, setOrderBy] = useState("created_at");
+
+  const handleDelete = (id) => {
+    setSmoothies((prevSmoothies) => {
+      return prevSmoothies.filter((smoothie) => smoothie.id !== id);
+    });
+  };
 
   useEffect(() => {
     const fetchSmoothies = async () => {
@@ -30,10 +37,17 @@ const Home = () => {
       {fetchError && <p>{fetchError}</p>}
       {smoothies && (
         <div className="smoothies">
-          {/* order by buttons */}
+          <p>Order by:</p>
+          <button onClick={() => setOrderBy("created_at")}>Time Created</button>
+          <button onClick={() => setOrderBy("title")}>Time Created</button>
+          <button onClick={() => setOrderBy("rating")}>Time Created</button>
           <div className="smoothie-grid">
             {smoothies.map((smoothie) => (
-              <SmoothieCard key={smoothie.id} smoothie={smoothie} />
+              <SmoothieCard
+                key={smoothie.id}
+                smoothie={smoothie}
+                onDelete={handleDelete}
+              />
             ))}
           </div>
         </div>
