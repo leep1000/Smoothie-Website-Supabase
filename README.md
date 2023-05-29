@@ -13,7 +13,7 @@ A simple yet efficient smoothie recipe app where you can view, add, update, and 
 
 - Implement User Authentication and Authorization
 - Convert the current JavaScript codebase to TypeScript
-- Include unit tests to ensure that the application is reliable
+- Include unit tests to ensure that the application works as intended
 
 ## Technologies Used
 
