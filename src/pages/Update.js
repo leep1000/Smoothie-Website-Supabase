@@ -4,6 +4,7 @@ import supabase from "../config/superbaseClient";
 
 const Update = () => {
   const { id } = useParams();
+  console.log(id);
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -18,11 +19,11 @@ const Update = () => {
       setFormError("Please fill in all the fields correctly");
       return;
     }
-
+    console.log(title, method, rating);
     const { data, error } = await supabase
       .from("smoothies")
       .update({ title, method, rating })
-      .eq("id")
+      .eq("id", id)
       .select();
 
     if (error) {
@@ -31,7 +32,6 @@ const Update = () => {
     }
 
     if (data) {
-      console.log(data);
       setFormError(null);
       navigate("/", { replace: true });
     }
