@@ -1,4 +1,5 @@
 # Smoothie Recipe App
+Checkout [the app here!]([https://www.youtube.com/watch?v=ydz7Dj5QHKY&list=PL4cUxeGkcC9hUb6sHthUEwG7r9VDPBMKO](https://supabase-smoothies.netlify.app/). 
 
 A simple yet efficient smoothie recipe app where you can view, add, update, and delete smoothie recipes with ease. This app has been built as a personal project to bolster my skills and experience with Supabase and React, specifically in the use of react router, useParams, and useNavigate. The project was created following NetNinja's Supabase tutorial, which can be found [here](https://www.youtube.com/watch?v=ydz7Dj5QHKY&list=PL4cUxeGkcC9hUb6sHthUEwG7r9VDPBMKO).
 
